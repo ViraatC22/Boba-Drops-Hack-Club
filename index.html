@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeonPurr | The Ultimate Feline Experience</title>
+    <meta name="description" content="A visually stunning interactive website about cats.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">NeonPurr <span class="paw-icon">🐾</span></div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#daily-cat">Daily Cat</a></li>
+            <li><a href="#breeds">Breeds</a></li>
+            <li><a href="#virtual-pet">Virtual Pet</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+        </ul>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1 class="glitch" data-text="Discover the Feline Universe">Discover the Feline Universe</h1>
+                <p class="subtitle">An interactive journey into the world of cats.</p>
+                <a href="#daily-cat" class="cta-button">Start Exploring</a>
+            </div>
+            <div class="hero-visual">
+                <!-- CSS Art or SVG Cat will go here -->
+                <div class="cat-illustration">
+                    <svg viewBox="0 0 200 200" class="floating-cat">
+                        <circle cx="100" cy="100" r="80" fill="#7B2CBF" />
+                        <path d="M60 70 L40 30 L90 50 Z" fill="#7B2CBF" />
+                        <path d="M140 70 L160 30 L110 50 Z" fill="#7B2CBF" />
+                        <circle cx="80" cy="90" r="10" fill="#fff" />
+                        <circle cx="120" cy="90" r="10" fill="#fff" />
+                        <path d="M95 110 L105 110 L100 120 Z" fill="#FF9E00" />
+                        <path d="M80 130 Q100 150 120 130" stroke="#fff" stroke-width="3" fill="none" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cat of the Day -->
+        <section id="daily-cat" class="section">
+            <h2 class="section-title">Cat of the Day</h2>
+            <div class="daily-cat-card glass-panel">
+                <div class="cat-image-placeholder" id="daily-cat-img">
+                    <div class="loader"></div>
+                </div>
+                <div class="cat-info">
+                    <h3 id="daily-cat-name">Loading...</h3>
+                    <p id="daily-cat-fact">Fetching today's feline wisdom...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Breed Explorer -->
+        <section id="breeds" class="section">
+            <h2 class="section-title">Breed Explorer</h2>
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="playful">Playful</button>
+                <button class="filter-btn" data-filter="calm">Calm</button>
+                <button class="filter-btn" data-filter="fluffy">Fluffy</button>
+            </div>
+            <div class="breed-grid" id="breed-grid">
+                <!-- JS will populate this -->
+            </div>
+        </section>
+
+        <!-- Fun Facts -->
+        <section id="facts" class="section">
+            <h2 class="section-title">Did You Know?</h2>
+            <div class="fact-container" id="fact-container">
+                <p class="fact-text">Cats spend 70% of their lives sleeping.</p>
+                <button class="reveal-btn" id="new-fact-btn">Next Fact ✨</button>
+            </div>
+        </section>
+
+        <!-- Virtual Pet -->
+        <section id="virtual-pet" class="section">
+            <h2 class="section-title">Your Virtual Companion</h2>
+            <div class="pet-simulator glass-panel">
+                <div class="pet-screen">
+                    <div class="pet-avatar" id="pet-avatar">🐱</div>
+                    <div class="pet-status">
+                        <div class="stat">
+                            <span>Hunger</span>
+                            <div class="progress-bar"><div class="fill" id="hunger-bar" style="width: 80%"></div></div>
+                        </div>
+                        <div class="stat">
+                            <span>Happiness</span>
+                            <div class="progress-bar"><div class="fill" id="happiness-bar" style="width: 60%"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pet-controls">
+                    <button class="control-btn" data-action="feed">Feed 🐟</button>
+                    <button class="control-btn" data-action="play">Play 🧶</button>
+                    <button class="control-btn" data-action="pet">Pet 👋</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz -->
+        <section id="quiz" class="section">
+            <h2 class="section-title">Which Cat Are You?</h2>
+            <div class="quiz-container glass-panel" id="quiz-container">
+                <div id="quiz-question" class="quiz-question">Ready to find out?</div>
+                <div id="quiz-options" class="quiz-options">
+                    <button class="quiz-btn" onclick="startQuiz()">Start Quiz</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Gallery (User Photos) -->
+        <section id="gallery" class="section">
+             <h2 class="section-title">Community Gallery</h2>
+             <div class="gallery-grid" id="gallery-grid">
+                 <!-- Placeholders -->
+                 <div class="gallery-item"></div>
+                 <div class="gallery-item"></div>
+                 <div class="gallery-item"></div>
+                 <div class="gallery-item"></div>
+             </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 NeonPurr. Made with 😻 and Code.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>
