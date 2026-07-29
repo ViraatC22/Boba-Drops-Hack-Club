@@ -7,8 +7,10 @@
     --accent-secondary: #9d4edd;
     --glass-bg: rgba(255, 255, 255, 0.05);
     --glass-border: rgba(255, 255, 255, 0.1);
-    --font-body: 'Outfit', sans-serif;
-    --font-display: 'Fredoka', cursive;
+    --focus-color: #57f3ff;
+    --font-body: 'Outfit', system-ui, sans-serif;
+    --font-display: 'Fredoka', system-ui, sans-serif;
+    color-scheme: dark;
 }
 
 * {
@@ -17,13 +19,46 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
 body {
     font-family: var(--font-body);
     background-color: var(--bg-color);
     color: var(--text-color);
     overflow-x: hidden;
     line-height: 1.6;
-    scroll-behavior: smooth;
+}
+
+.skip-link {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 2000;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    background: var(--focus-color);
+    color: var(--bg-color);
+    font-weight: 700;
+    text-decoration: none;
+    transform: translateY(-150%);
+    transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+a:focus-visible {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 4px;
+}
+
+.hero-section,
+.section {
+    scroll-margin-top: 7rem;
 }
 
 /* Scrollbar */
@@ -58,6 +93,8 @@ body {
     font-size: 1.8rem;
     color: var(--heading-color);
     font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 .paw-icon {
@@ -76,9 +113,12 @@ body {
     font-weight: 500;
     position: relative;
     transition: color 0.3s;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a:focus-visible {
     color: var(--accent-primary);
 }
 
@@ -113,8 +153,8 @@ body {
 .cta-button {
     display: inline-block;
     padding: 1rem 2.5rem;
-    background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
-    color: #fff;
+    background: linear-gradient(45deg, #ff5c8a, #c77dff);
+    color: var(--bg-color);
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
@@ -128,7 +168,9 @@ body {
 
 .floating-cat {
     width: 300px;
-    height: 300px;
+    max-width: min(300px, 70vw);
+    height: auto;
+    display: block;
     animation: float 6s ease-in-out infinite;
 }
 
@@ -327,27 +369,110 @@ footer {
     text-align: center;
     padding: 2rem;
     background: rgba(0,0,0,0.3);
-    color: rgba(255,255,255,0.5);
+    color: #cbb6de;
 }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+    html {
+        scroll-padding-top: 10rem;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.65rem 1rem;
+        padding: 0.75rem 5%;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.25rem 0.75rem;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.35rem 0.25rem;
+    }
+
     .hero-section {
         flex-direction: column;
         text-align: center;
-        padding-top: 100px;
+        min-height: auto;
+        padding: 4rem 1.5rem;
         gap: 2rem;
     }
-    
+
+    .section {
+        min-height: auto;
+        padding: 4rem 1.5rem;
+        scroll-margin-top: 10rem;
+    }
+
+    .hero-section {
+        scroll-margin-top: 10rem;
+    }
+
     .daily-cat-card {
         flex-direction: column;
     }
-    
-    .nav-links {
-        display: none; /* Simplification for static no-js mobile menu */
-    }
-    
+
     .hero-content h1 {
         font-size: 3rem;
+    }
+
+    .tags {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: clamp(2.25rem, 13vw, 3rem);
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .glass-panel {
+        padding: 1.25rem;
+    }
+
+    .breed-grid,
+    .facts-container {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .mascot-container {
+        padding: 2.5rem 1rem;
+        width: 100%;
+    }
+
+    .neon-cat-avatar {
+        font-size: 6rem;
+    }
+
+    .css-pulse {
+        max-width: 80vw;
+        max-height: 80vw;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
     }
 }

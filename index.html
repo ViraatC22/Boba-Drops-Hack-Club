@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeonPurr | The Ultimate Feline Experience</title>
-    <meta name="description" content="A visually stunning interactive website about cats.">
+    <title>NeonPurr | A Neon Cat Breed Showcase</title>
+    <meta name="description" content="Explore five popular cat breeds and feline facts in an accessible neon-themed HTML and CSS showcase.">
+    <meta name="theme-color" content="#10002b">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,8 +16,12 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">NeonPurr <span class="paw-icon">🐾</span></div>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <nav class="navbar" aria-label="Primary navigation">
+        <a class="logo" href="#hero" aria-label="NeonPurr home">
+            NeonPurr <span class="paw-icon" aria-hidden="true">🐾</span>
+        </a>
         <ul class="nav-links">
             <li><a href="#hero">Home</a></li>
             <li><a href="#featured">Featured</a></li>
@@ -26,7 +31,7 @@
         </ul>
     </nav>
 
-    <main>
+    <main id="main-content">
         <!-- Hero Section -->
         <section id="hero" class="hero-section">
             <div class="hero-content">
@@ -37,7 +42,7 @@
             <div class="hero-visual">
                 <!-- CSS Art Cat -->
                 <div class="cat-illustration">
-                    <svg viewBox="0 0 200 200" class="floating-cat">
+                    <svg viewBox="0 0 200 200" class="floating-cat" aria-hidden="true" focusable="false">
                         <circle cx="100" cy="100" r="80" fill="#7B2CBF" />
                         <path d="M60 70 L40 30 L90 50 Z" fill="#7B2CBF" />
                         <path d="M140 70 L160 30 L110 50 Z" fill="#7B2CBF" />
@@ -55,8 +60,7 @@
             <h2 class="section-title">Featured Feline</h2>
             <div class="daily-cat-card glass-panel">
                 <div class="cat-image-wrapper">
-                    <!-- Requirement: At least one image -->
-                    <img src="images/siamese.jpeg" alt="Siamese Cat" class="featured-img">
+                    <img src="images/siamese.jpeg" alt="A seal-point Siamese cat with blue eyes resting on a light blanket" class="featured-img" width="225" height="225" loading="lazy" decoding="async">
                 </div>
                 <div class="cat-info">
                     <h3>The Siamese</h3>
@@ -76,28 +80,28 @@
             <div class="breed-grid">
                 <div class="breed-card">
                     <div class="card-img-container">
-                        <img src="images/Bengal.jpeg" alt="Bengal Cat" class="breed-img">
+                        <img src="images/Bengal.jpeg" alt="A brown Bengal cat with a dark marbled coat" class="breed-img" width="201" height="251" loading="lazy" decoding="async">
                     </div>
                     <h3>Bengal</h3>
                     <p>Wild appearance with a domestic temperament.</p>
                 </div>
                 <div class="breed-card">
                     <div class="card-img-container">
-                        <img src="images/maincoon.jpeg" alt="Maine Coon Cat" class="breed-img">
+                        <img src="images/maincoon.jpeg" alt="A long-haired gray Maine Coon cat outdoors" class="breed-img" width="251" height="201" loading="lazy" decoding="async">
                     </div>
                     <h3>Maine Coon</h3>
                     <p>The gentle giant of the cat world.</p>
                 </div>
                 <div class="breed-card">
                     <div class="card-img-container">
-                        <img src="images/Persian.jpeg" alt="Persian Cat" class="breed-img">
+                        <img src="images/Persian.jpeg" alt="A long-haired white Persian cat reclining indoors" class="breed-img" width="273" height="184" loading="lazy" decoding="async">
                     </div>
                     <h3>Persian</h3>
                     <p>Luxurious long fur and a sweet personality.</p>
                 </div>
                 <div class="breed-card">
                     <div class="card-img-container">
-                        <img src="images/Sphynx.jpeg" alt="Sphynx Cat" class="breed-img">
+                        <img src="images/Sphynx.jpeg" alt="A gray hairless Sphynx cat sitting against a white wall" class="breed-img" width="213" height="237" loading="lazy" decoding="async">
                     </div>
                     <h3>Sphynx</h3>
                     <p>Hairless, warm, and incredibly friendly.</p>
@@ -110,16 +114,16 @@
             <h2 class="section-title">Did You Know?</h2>
             <div class="facts-container">
                 <div class="fact-card">
-                    <span class="fact-icon">💤</span>
-                    <p>Cats spend 70% of their lives sleeping.</p>
+                    <span class="fact-icon" aria-hidden="true">💤</span>
+                    <p>Cats commonly sleep for 12 to 16 hours each day.</p>
                 </div>
                 <div class="fact-card">
-                    <span class="fact-icon">👂</span>
-                    <p>A cat's ear has 32 muscles, allowing 180° rotation.</p>
+                    <span class="fact-icon" aria-hidden="true">👂</span>
+                    <p>Cats can rotate each ear independently to help locate sounds.</p>
                 </div>
                 <div class="fact-card">
-                    <span class="fact-icon">🚀</span>
-                    <p>Cats can jump up to 6 times their own height.</p>
+                    <span class="fact-icon" aria-hidden="true">🚀</span>
+                    <p>Powerful hind legs help cats leap several times their body length.</p>
                 </div>
             </div>
         </section>
@@ -128,7 +132,7 @@
         <section id="mascot" class="section">
             <h2 class="section-title">Neon Mascot</h2>
             <div class="mascot-container glass-panel">
-                <div class="neon-cat-avatar">🐱</div>
+                <div class="neon-cat-avatar" aria-hidden="true">🐱</div>
                 <p>I'm the official guardian of this static realm.</p>
                 <div class="css-pulse"></div>
             </div>
@@ -137,7 +141,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 NeonPurr. HTML & CSS Only.</p>
+        <p>NeonPurr · A static HTML and CSS cat showcase.</p>
     </footer>
 </body>
 </html>
