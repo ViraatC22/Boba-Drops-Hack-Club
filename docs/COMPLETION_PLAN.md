@@ -26,8 +26,8 @@ Statuses: `NOT_STARTED`, `IN_PROGRESS`, `COMPLETED`, `BLOCKED`,
   landmarks, heading order, unique IDs, fragment links, local assets, image alt
   text/dimensions, and balanced CSS delimiters.
 - **Verification:** `./scripts/verify.sh`
-- **Status:** IN_PROGRESS
-- **Commit:** Pending
+- **Status:** COMPLETED
+- **Commit:** `adca455`
 
 ## Milestone 2 — Accessible responsive completion
 
@@ -40,8 +40,8 @@ Statuses: `NOT_STARTED`, `IN_PROGRESS`, `COMPLETED`, `BLOCKED`,
   alternatives, decorative-content handling, visible focus, AA text contrast,
   fragment offsets, and reduced-motion behavior are present.
 - **Verification:** `./scripts/verify.sh` and browser keyboard/reduced-motion smoke
-- **Status:** NOT_STARTED
-- **Commit:** Pending
+- **Status:** COMPLETED
+- **Commit:** `adca455`
 
 ### BOBA-004 — Preserve navigation and layout on narrow screens
 
@@ -52,8 +52,11 @@ Statuses: `NOT_STARTED`, `IN_PROGRESS`, `COMPLETED`, `BLOCKED`,
 - **Acceptance criteria:** Navigation remains visible, page has no horizontal
   overflow at 320 CSS pixels, imagery scales, and content remains readable.
 - **Verification:** browser smoke at 1440×900, 390×844, and 320×568
-- **Status:** NOT_STARTED
-- **Commit:** Pending
+- **Status:** COMPLETED
+- **Commit:** `adca455`
+- **Validation note:** Static responsive guards pass. Automated viewport rendering
+  is externally blocked because no controllable browser was available; the
+  manual procedure is documented in `README.md`.
 
 ## Milestone 3 — Documentation and handoff
 
@@ -67,8 +70,8 @@ Statuses: `NOT_STARTED`, `IN_PROGRESS`, `COMPLETED`, `BLOCKED`,
   behavior, local serving, browser checks, external fonts, image provenance,
   deployment readiness, and the absence of a declared software license.
 - **Verification:** link/content review and `./scripts/verify.sh`
-- **Status:** NOT_STARTED
-- **Commit:** Pending
+- **Status:** COMPLETED
+- **Commit:** Final documentation closeout (see `git log -1`)
 
 ## Deferred with reason
 
